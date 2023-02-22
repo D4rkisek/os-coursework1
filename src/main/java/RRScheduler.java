@@ -17,8 +17,8 @@ public class RRScheduler extends AbstractScheduler {
      */
     @Override
     public void initialize(Properties parameters) {
-        this.readyQueue = new LinkedList<>();
-        this.timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum"));
+        readyQueue = new LinkedList<>();
+        timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum"));
     }
 
     /**
@@ -29,11 +29,11 @@ public class RRScheduler extends AbstractScheduler {
     @Override
     public void ready(Process process, boolean usedFullTimeQuantum) {
         if (usedFullTimeQuantum) {
-            // If the process has fully used its time quantum, add it to the back of the queue
-            this.readyQueue.add(process);
+            // If the processor has fully used its time quantum, add it to the back of the queue
+            readyQueue.add(process);
         } else {
-            // If the process has not fully used its time quantum, add it to the front of the queue
-            this.readyQueue.offer(process);
+            // If the processor has not fully used its time quantum, add it to the front of the queue
+            readyQueue.offer(process);
         }
     }
 
@@ -44,30 +44,36 @@ public class RRScheduler extends AbstractScheduler {
      */
     @Override
     public Process schedule() {
-        if (!this.readyQueue.isEmpty()) {
+        if (!readyQueue.isEmpty()) {
             // Get the next process to run from the front of the queue
-            Process nextProcess = this.readyQueue.poll();
+            System.out.println("Scheduler selects process "+readyQueue.peek());
+            Process nextProcess = readyQueue.poll();
+
 
             // Set the process state to RUNNING
+            assert nextProcess != null;
             nextProcess.state = Process.State.RUNNING;
 
             // Return the process
             return nextProcess;
         } else {
+            System.out.println("No process to run.");
             return null;
         }
     }
+
     /**
      * Returns the time quantum of this scheduler.
      */
+    @Override
     public int getTimeQuantum() {
-        return this.timeQuantum;
+        return timeQuantum;
     }
 
     /**
-
      Returns whether the scheduler is preemptive
      */
+    @Override
     public boolean isPreemptive() {
         return false;
     }
