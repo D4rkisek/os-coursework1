@@ -29,9 +29,7 @@ public abstract class Process implements Comparable<Process> {
    */
   public int getWaitingTime() {
     int turnaroundTime = getTurnaroundTime();
-    int totalCpuTime = cpuTime;
-    int totalIoTime = blockedTime;
-    return turnaroundTime - totalCpuTime - totalIoTime;
+    return turnaroundTime - cpuTime - blockedTime;
   }
 
   /**
