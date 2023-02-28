@@ -50,17 +50,9 @@ public class IdealSJFScheduler extends AbstractScheduler {
       readyQueue.remove(shortestProcess);
       return shortestProcess;
     } else {
+      System.out.println("No process to run.");
       return null;
     }
-  }
-
-
-  /**
-
-   Returns whether the scheduler is preemptive
-   */
-  public boolean isPreemptive() {
-    return false;
   }
 
 }
