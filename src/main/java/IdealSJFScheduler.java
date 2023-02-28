@@ -25,13 +25,7 @@ public class IdealSJFScheduler extends AbstractScheduler {
    * after having fully used its time quantum.
    */
   public void ready(Process process, boolean usedFullTimeQuantum) {
-    if (usedFullTimeQuantum) {
-      // If the processor has fully used its time quantum, add it to the back of the queue
-      readyQueue.add(process);
-    } else {
-      // If the processor has not fully used its time quantum, add it to the front of the queue
-      readyQueue.offer(process);
-    }
+    readyQueue.offer(process);
   }
 
   /**
