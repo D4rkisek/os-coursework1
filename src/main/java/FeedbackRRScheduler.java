@@ -57,7 +57,7 @@ public class FeedbackRRScheduler extends AbstractScheduler {
       readyQueue.remove(selectedProcess);
       readyQueue.add(selectedProcess);
 
-      selectedProcess.setState(Process.State.RUNNING);
+      selectedProcess.state = Process.State.RUNNING;
 
       return selectedProcess;
     }
