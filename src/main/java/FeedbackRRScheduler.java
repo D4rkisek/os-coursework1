@@ -60,8 +60,10 @@ public class FeedbackRRScheduler extends AbstractScheduler {
       readyQueue.remove(selectedProcess);
    //   readyQueue.add(selectedProcess);
       return selectedProcess;
+    }else{
+      System.out.println("No process to run.");
+      return null;
     }
-    return null;
   }
 
   /**

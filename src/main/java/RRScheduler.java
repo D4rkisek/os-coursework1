@@ -28,7 +28,7 @@ public class RRScheduler extends AbstractScheduler {
      */
     @Override
     public void ready(Process process, boolean usedFullTimeQuantum) {
-            readyQueue.offer(process); //since the algorithm is a non-preemptive therefore,
+            readyQueue.offer(process); //since the algorithm is a non-preemptive
         //the CPU is not allowed to interrupt any processes until the current process finishes its execution,
         // essentially making a RR algorithm a FCFS algorithm.
     }
