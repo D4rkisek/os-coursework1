@@ -30,11 +30,14 @@ public class FeedbackRRScheduler extends AbstractScheduler {
     if (usedFullTimeQuantum) {
       // demote the process to a lower priority level
       process.setPriority(process.getPriority() + 1);
+      // add the process to the end of the ready queue with its current priority
+      readyQueue.add(process);
+    }else{
+      // If the processor has not fully used its time quantum, add it to the front of the queue
+      readyQueue.offer(process);
     }
-
-    // add the process to the end of the ready queue with its current priority
-    readyQueue.add(process);
   }
+
   /**
    * Removes the next process to be run from the ready queue
    * and returns it.
@@ -55,13 +58,9 @@ public class FeedbackRRScheduler extends AbstractScheduler {
     // if multiple processes have the same priority level, use a round-robin approach
     if (selectedProcess != null) {
       readyQueue.remove(selectedProcess);
-      readyQueue.add(selectedProcess);
-
-      selectedProcess.state = Process.State.RUNNING;
-
+   //   readyQueue.add(selectedProcess);
       return selectedProcess;
     }
-
     return null;
   }
 
