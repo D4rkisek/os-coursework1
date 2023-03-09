@@ -9,7 +9,7 @@ import java.util.Properties;
  */
 public class RRScheduler extends AbstractScheduler {
 
-//  private int timeQuantum;
+  private int timeQuantum;
   private Queue<Process> readyQueue; //ready/unblock queue
 
     /**
@@ -18,7 +18,7 @@ public class RRScheduler extends AbstractScheduler {
     @Override
     public void initialize(Properties parameters) {
         readyQueue = new LinkedList<>();
-//        timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum"));
+        timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum"));
     }
 
     /**
@@ -28,9 +28,13 @@ public class RRScheduler extends AbstractScheduler {
      */
     @Override
     public void ready(Process process, boolean usedFullTimeQuantum) {
-            readyQueue.offer(process); //since the algorithm is a non-preemptive
-        //the CPU is not allowed to interrupt any processes until the current process finishes its execution,
-        // essentially making a RR algorithm a FCFS algorithm.
+        if (usedFullTimeQuantum) {
+            // If the processor has fully used its time quantum, add it to the back of the queue
+            readyQueue.add(process);
+        } else {
+            // If the processor has not fully used its time quantum, add it to the front of the queue
+            readyQueue.offer(process);
+        }
     }
 
     /**
@@ -55,7 +59,7 @@ public class RRScheduler extends AbstractScheduler {
      */
     @Override
     public int getTimeQuantum() {
-        return -1;
+        return timeQuantum;
     } ////since the algorithm is a non-preemptive therefore,
     //the CPU is not allowed to interrupt any processes until the current process finishes its execution,
     // essentially making a RR algorithm a FCFS algorithm.
