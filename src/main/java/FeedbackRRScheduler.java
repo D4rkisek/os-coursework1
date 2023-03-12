@@ -44,7 +44,6 @@ public class FeedbackRRScheduler extends AbstractScheduler {
    * Returns null if there is no process to run.
    */
   public Process schedule() {
-    
     // select the process with the highest priority level
     Process selectedProcess = null;
     int highestPriority = Integer.MAX_VALUE;
@@ -54,11 +53,9 @@ public class FeedbackRRScheduler extends AbstractScheduler {
         selectedProcess = p;
       }
     }
-
     // if multiple processes have the same priority level, use a round-robin approach
     if (selectedProcess != null) {
       readyQueue.remove(selectedProcess);
-   //   readyQueue.add(selectedProcess);
       return selectedProcess;
     }else{
       System.out.println("No process to run.");

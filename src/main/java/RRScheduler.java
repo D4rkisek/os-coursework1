@@ -17,8 +17,8 @@ public class RRScheduler extends AbstractScheduler {
      */
     @Override
     public void initialize(Properties parameters) {
-        readyQueue = new LinkedList<>();
-        timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum"));
+        readyQueue = new LinkedList<>(); //setting up the ready queue
+        timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum")); //reading the timeQuantum from the parameters
     }
 
     /**
@@ -60,10 +60,7 @@ public class RRScheduler extends AbstractScheduler {
     @Override
     public int getTimeQuantum() {
         return timeQuantum;
-    } ////since the algorithm is a non-preemptive therefore,
-    //the CPU is not allowed to interrupt any processes until the current process finishes its execution,
-    // essentially making a RR algorithm a FCFS algorithm.
-
+    }
     /**
      Returns whether the scheduler is preemptive
      */
