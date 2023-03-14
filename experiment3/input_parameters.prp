@@ -1,4 +1,4 @@
-numberOfProcesses=5
+numberOfProcesses=6
 staticPriority=0
 meanInterArrival=150.0
 meanCpuBurst=15.0
