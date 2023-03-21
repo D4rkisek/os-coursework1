@@ -4,5 +4,5 @@ meanInterArrival=10.0
 meanCpuBurst=100.0
 meanIOBurst=5.0
 meanNumberBursts=3.0
-seed=270826029269605
+seed=270484445116605
 
