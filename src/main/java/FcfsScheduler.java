@@ -3,10 +3,8 @@ import java.util.LinkedList;
 
 /**
  * First-Come First-Served Scheduler
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class FcfsScheduler extends AbstractScheduler {
 
   private Queue<Process> readyQueue;

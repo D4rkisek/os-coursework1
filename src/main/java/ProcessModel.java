@@ -5,10 +5,8 @@ import java.util.Properties;
 
 /**
  * Process Model
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class ProcessModel {
 
   private BurstProcess running;

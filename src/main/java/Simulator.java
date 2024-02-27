@@ -8,10 +8,8 @@ import java.io.IOException;
 
 /**
  * Simulator
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class Simulator
 {
   /**

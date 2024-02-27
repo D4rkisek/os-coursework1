@@ -4,9 +4,8 @@ import java.util.Queue;
 
 /**
  * Feedback Round Robin Scheduler
- * 
- * @version 2017
  */
+
 public class FeedbackRRScheduler extends AbstractScheduler {
 
   private int timeQuantum;

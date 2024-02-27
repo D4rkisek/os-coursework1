@@ -4,9 +4,8 @@ import java.util.Properties;
 
 /**
  * Ideal Shortest Job First Scheduler
- *
- * @version 2017
  */
+
 public class IdealSJFScheduler extends AbstractScheduler {
 
   private Queue<Process> readyQueue;

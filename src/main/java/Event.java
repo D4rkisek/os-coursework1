@@ -2,10 +2,8 @@ import java.lang.Comparable;
 
 /**
  * Event
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class Event implements Comparable<Event> {
 
   public enum Type { CREATE, BLOCK, UNBLOCK, TERMINATE, TIMER };

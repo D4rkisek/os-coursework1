@@ -4,10 +4,8 @@ import java.util.LinkedList;
 
 /**
  * A simulated process with bursts
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class BurstProcess extends Process {
 
   /**

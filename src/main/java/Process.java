@@ -4,9 +4,8 @@ import java.util.LinkedList;
 
 /**
  * A simulated process
- * 
- * @version 2017
  */
+
 public abstract class Process implements Comparable<Process> {
 
   public enum State { CREATED, READY, RUNNING, BLOCKED, TERMINATED };

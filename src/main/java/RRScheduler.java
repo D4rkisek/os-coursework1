@@ -4,9 +4,8 @@ import java.util.Properties;
 
 /**
  * Round Robin Scheduler
- * 
- * @version 2017
  */
+
 public class RRScheduler extends AbstractScheduler {
 
   private int timeQuantum;

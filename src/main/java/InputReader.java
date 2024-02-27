@@ -8,10 +8,8 @@ import java.util.LinkedList;
 
 /**
  * Reads an input data file
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class InputReader {
 
   private List<Event> events;

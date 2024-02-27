@@ -6,10 +6,8 @@ import java.util.LinkedList;
 
 /**
  * EventProcessor
- * 
- * @author Peter Schrammel
- * @version 2017
  */
+
 public class EventProcessor {
 
   private LinkedList<Event> eventQueue;

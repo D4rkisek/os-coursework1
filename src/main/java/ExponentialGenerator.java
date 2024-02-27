@@ -1,12 +1,10 @@
 import java.util.Random;
 
 /**
- * @author Peter Schrammel, Ian Wakeman
- * @version 2017
- *
  * A simple exponential random generator. Uses the pseudo random generator in 
  * {@link java.util.Random} 
  */
+
 public class ExponentialGenerator {
   private Random rand;
   private double mean;

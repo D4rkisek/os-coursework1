@@ -4,9 +4,8 @@ import java.util.Queue;
 
 /**
  * Shortest Job First Scheduler
- * 
- * @version 2017
  */
+
 public class SJFScheduler extends AbstractScheduler {
 
   private Queue<Process> readyQueue; //ready/unblock queue
